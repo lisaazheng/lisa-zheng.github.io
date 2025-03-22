@@ -63,6 +63,38 @@ ol {
     max-width: 600px;
 }
 
+.tab-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #555;
+}
+
+.tab-content {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #333;
+}
+
+#tab1 {
+    display: block;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul li {
