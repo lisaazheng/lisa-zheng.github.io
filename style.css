@@ -9,6 +9,10 @@ body {
     background-color: #B2AC88;
     font-family: 'Gaegu', cursive;
     line-height: 1.6;
+    background-image: url('path/to/homebg.png');
+    background-size: cover; /* This makes the image cover the entire page */
+    background-position: center; /* This centers the image */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
 }
 
 header {
