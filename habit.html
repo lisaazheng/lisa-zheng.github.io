@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Habit Tracker</h1>
+        <div class="tracker">
+            <div class="habit">
+                <p>Workout</p>
+                <div class="days">
+                    <button class="day"></button>
+                    <button class="day"></button>
+                    <button class="day"></button>
+                    <button class="day"></button>
+                    <button class="day"></button>
+                    <button class="day"></button>
+                    <button class="day"></button>
+                </div>
+            </div>
+            <div class="habit">
+                <p>Read</p>
+                <div class="days">
+                    <button class="day"></button>
+                    <button class="day"></button>
+                    <button class="day"></button>
+                    <button class="day"></button>
+                    <button class="day"></button>
+                    <button class="day"></button>
+                    <button class="day"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+4. Style It with CSS (style.css)
+Make it aesthetic with soft colors and rounded buttons:
+
+css
+Copy
+Edit
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.container {
+    margin: 20px auto;
+    width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tracker {
+    margin-top: 10px;
+}
+
+.habit {
+    margin-bottom: 15px;
+}
+
+.days {
+    display: flex;
+    justify-content: center;
+}
+
+.day {
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    border-radius: 50%;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.day.completed {
+    background: #4caf50;
+}
