@@ -6,11 +6,7 @@
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-  body {background-color: powderblue;
-        background-image: url('goose.jpg');
-        background-size: cover; /* This makes the image cover the entire page */
-        background-position: center; /* This centers the image */
-        background-repeat: no-repeat; /* This prevents the image from repeating */
+  body {background-color: green; /* This prevents the image from repeating */
       }
   h1 {color: white;
   font-family: "Gaegu", cursive;
@@ -18,11 +14,29 @@
   p {color: white;
   font-family: "Gaegu", cursive;
      }
+  .accordion {
+            background-color: #eee;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            transition: 0.4s;
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 15px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
 </style>
 <body>
-  <h1> Art</h1>
-  <p> This is where I'll add what I know about studying, plus my own thoughts! </p>
-  
+  <h1> Studying </h1>  
   <p> Since this website is mostly for me, I'll be attaching links to my own notes that will be private Google Docs. (I don't really expect anyone to stumble upon my website! 
   I am taking 5 AP's in school this year, and self-studying for AP Computer Science A. I find that it is very finally for me to make these summary sheets in Google Docs deriving all that I need to know from school material, CollegeBoard Daily videos, online resources, and Princeton Reviews. </p>
   <ol>
@@ -42,9 +56,37 @@
     <li> 
       <a href = "https://track.toggl.com/timer"> Toggl Time tracker </a> You can enter what you are currently working on, such as "web dev" and it will track the time you spent on it. This makes me feel very rewarded at the end of the day or week as I see that I used my time efficiently. I also usually work for 1 hour on a specific task, take a 10-minute break, and choose what to work on next.
     </li>
+    <li>
+      <a href = "https://flocus.com/"> Flocus.io </a> Very aesthetic pomodoro timer.
+    </li>
+    <li>
+      Goodnotes. If you have a stylus and an iPad/tablet, this is a great way to store your notes all in one place, so you don't have loose papers in your backpack. Getting Goodnotes Premium is worth it (it's a one-time payment of $30), as it allows you access to infinite notebooks!
+    </li>
+    <li>
+      Obsidian. A great way to take notes on your computer. It's very organized and easy to use.
+    </li>
+    <li>
+      Anki. A better flashcards app than Quizlet, because you can personalize how much repetition you need for a specific card.
+    </li>
+    <li> Spotify, of course! I can't work without music. It gets me going.
+    </li>
   </ol>
   <a href="index.html">
   <img src="match2.png" alt="Matcha Glass" style="width: 100px; height: auto;">
   </a>
+
+  <h2>Simple Accordion Example</h2>
+<button class="accordion">Click Me</button>
+<div class="panel">
+    <p>This is the expandable content!</p>
+</div>
+  
+  <script>
+    document.querySelector(".accordion").addEventListener("click", function() {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+</script>
 </body>
 </html>
