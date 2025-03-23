@@ -81,7 +81,6 @@ ol {
   <img src="Match2.png" alt="Matcha Glass" style="width: 100px; height: auto;">
   </a>
   </div>
-  
 
   <h2>Review of Productivity Apps (that I don't use)</h2>
 <button class="accordion">Click Me</button>
@@ -95,6 +94,180 @@ ol {
         let panel = this.nextElementSibling;
         panel.style.display = panel.style.display === "block" ? "none" : "block";
     });
+    
 </script>
 </body>
 </html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Bucket List</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4efe7;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        h2 {
+            color: #5a5a5a;
+            margin-bottom: 30px;
+        }
+        .cup-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .cup {
+            width: 150px;
+            height: 100px;
+            background: radial-gradient(circle at 50% 30%, #a8c66c, #7d9a4d);
+            border-radius: 50% 50% 0 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .cup::after {
+            content: '';
+            width: 180px;
+            height: 120px;
+            background: white;
+            position: absolute;
+            bottom: -50px;
+            left: -15px;
+            border-radius: 50% 50% 40% 40%;
+        }
+        .handle {
+            width: 50px;
+            height: 60px;
+            border: 10px solid white;
+            border-radius: 50%;
+            position: absolute;
+            right: -30px;
+            top: 20px;
+        }
+        .foam {
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            top: 10px;
+            background: radial-gradient(circle, rgba(255,255,255,0.7) 10%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #bucketInput {
+            padding: 15px 20px;
+            border-radius: 30px;
+            border: 2px solid #a8c66c;
+            font-size: 16px;
+            outline: none;
+            width: 300px; /* Increased the width */
+            background: #f4f4f4;
+            color: #444;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #bucketInput:focus {
+            border-color: #5a7736;
+            box-shadow: 0 0 8px rgba(93, 119, 54, 0.5);
+            background: #fff;
+        }
+        #bucketInput:hover {
+            box-shadow: 0 0 15px 5px rgba(93, 119, 54, 0.3), 0 0 30px 10px rgba(183, 197, 121, 0.2);
+            border-color: #5a7736;
+        }
+        button {
+            background-color: #7d9a4d;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #5a7736;
+        }
+        .list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 300px;
+        }
+        .list li {
+            background: #fff;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .list li:hover {
+            transform: translateY(-5px);
+        }
+        .bubble {
+            position: absolute;
+            bottom: 0;
+            width: 15px;
+            height: 15px;
+            background: #d4e09b;
+            border-radius: 50%;
+            animation: rise 5s infinite;
+        }
+        @keyframes rise {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-100px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h2>My Matcha Bucket List 🍵</h2>
+    <div class="cup-container">
+        <div class="cup">
+            <div class="foam"></div>
+        </div>
+        <div class="handle"></div>
+    </div>
+    <div class="input-container">
+        <input type="text" id="bucketInput" placeholder="Add a new item...">
+        <button onclick="addItem()">Add</button>
+    </div>
+    <ul class="list" id="bucketList"></ul>
+
+    <script>
+        function addItem() {
+            let input = document.getElementById("bucketInput");
+            let text = input.value.trim();
+            if (text !== "") {
+                let list = document.getElementById("bucketList");
+                let li = document.createElement("li");
+                li.textContent = text;
+                list.appendChild(li);
+                input.value = "";
+                createBubble();
+            }
+        }
+
+        function createBubble() {
+            let bubble = document.createElement("div");
+            bubble.classList.add("bubble");
+            let cup = document.querySelector(".cup");
+            bubble.style.left = Math.random() * 100 + "%";
+            cup.appendChild(bubble);
+            setTimeout(() => bubble.remove(), 5000);
+        }
+    </script>
+</body>
+</html>
+
