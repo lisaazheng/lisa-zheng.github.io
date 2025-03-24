@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 10px; text-align: center; }
+        .completed { background-color: lightgreen; }
+    </style>
+</head>
+<body>
+    <h2>Habit Tracker</h2>
+    <table id="habit-table">
+        <tr>
+            <th>Habit</th>
+            <th>Day 1</th>
+            <th>Day 2</th>
+            <th>Day 3</th>
+            <th>Day 4</th>
+            <th>Day 5</th>
+            <th>Day 6</th>
+            <th>Day 7</th>
+        </tr>
+        <tr>
+            <td>Exercise</td>
+            <td onclick="toggleCompletion(this)"></td>
+            <td onclick="toggleCompletion(this)"></td>
+            <td onclick="toggleCompletion(this)"></td>
+            <td onclick="toggleCompletion(this)"></td>
+            <td onclick="toggleCompletion(this)"></td>
+            <td onclick="toggleCompletion(this)"></td>
+            <td onclick="toggleCompletion(this)"></td>
+        </tr>
+    </table>
+
+    <script>
+        function toggleCompletion(cell) {
+            cell.classList.toggle('completed');
+        }
+    </script>
+</body>
+</html>
