@@ -30,13 +30,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             margin-bottom: 20px;
         }
-        textarea {
+        input, textarea {
             width: 100%;
-            height: 100px;
             font-size: 16px;
             padding: 10px;
             border-radius: 8px;
             border: none;
+            font-family: "Quicksand", sans-serif;
         }
         button {
             background-color: #3a5a40;
@@ -62,6 +62,19 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: left;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .entry:hover {
+            transform: scale(1.05);
+        }
+        .full-entry {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -69,21 +82,34 @@
     <h1>Lisa's Blog 🍵</h1>
     <div class="blog-container">
         <div class="entry-form">
+            <input id="blogTitle" type="text" placeholder="Blog Title">
             <textarea id="blogText" placeholder="Write something..."></textarea>
             <button onclick="addEntry()">Post</button>
         </div>
         <div class="blog-entries" id="entries"></div>
+        <div id="fullEntry" class="full-entry"></div>
     </div>
 
     <script>
         function addEntry() {
+            let title = document.getElementById("blogTitle").value;
             let text = document.getElementById("blogText").value;
-            if (text.trim() === "") return;
+            if (title.trim() === "" || text.trim() === "") return;
+            
             let entry = document.createElement("div");
             entry.className = "entry";
-            entry.innerHTML = `<p>${text}</p>`;
+            entry.innerHTML = `<h3>${title}</h3><p>${text.substring(0, 50)}...</p>`;
+            entry.onclick = function() { showFullEntry(title, text); };
+            
             document.getElementById("entries").prepend(entry);
+            document.getElementById("blogTitle").value = "";
             document.getElementById("blogText").value = "";
+        }
+        
+        function showFullEntry(title, text) {
+            let fullEntry = document.getElementById("fullEntry");
+            fullEntry.innerHTML = `<h2>${title}</h2><p>${text}</p>`;
+            fullEntry.style.display = "block";
         }
     </script>
 </body>
