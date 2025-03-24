@@ -4,45 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habit Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Aesthetic Sage Green Theme */
         body { 
-            font-family: Arial, sans-serif; 
+            font-family: 'Quicksand', sans-serif; 
             text-align: center; 
-            background-color: #f4f4f4;
+            background-color: #f0f4f3; 
+            color: #2f4f4f; 
             padding: 20px;
         }
-        h2 { color: #333; }
+        h2 { 
+            color: #3a5a40; 
+            font-weight: 600; 
+        }
         table { 
             width: 80%; 
             margin: 20px auto; 
             border-collapse: collapse; 
             background: white; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
         }
         th, td { 
-            border: 1px solid #ddd; 
+            border: 1px solid #cce3de; 
             padding: 15px; 
-            text-align: center;
-            cursor: pointer;
+            text-align: center; 
+            cursor: pointer; 
+            transition: all 0.3s ease-in-out;
         }
-        th { background-color: #4CAF50; color: white; }
-        .completed { background-color: lightgreen; }
+        th { 
+            background-color: #588157; 
+            color: white; 
+            font-weight: bold;
+        }
+        td { 
+            background-color: #f6fff8; 
+        }
+        td:hover { 
+            background-color: #b5c99a; 
+            transform: scale(1.05);
+        }
+        .completed { 
+            background-color: #a3b18a !important; 
+            color: white; 
+            font-weight: bold; 
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+            animation: pop 0.3s ease-in-out;
+        }
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
         .reset-btn {
             margin-top: 15px;
-            padding: 10px 20px;
-            background: red;
+            padding: 12px 25px;
+            background: #3a5a40;
             color: white;
             border: none;
             cursor: pointer;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
         }
-        .reset-btn:hover { background: darkred; }
+        .reset-btn:hover { 
+            background: #344e41; 
+            transform: scale(1.1); 
+        }
     </style>
 </head>
 <body>
 
-    <h2>Weekly Habit Tracker</h2>
+    <h2>✨ Aesthetic Habit Tracker ✨</h2>
     
     <table id="habit-table">
         <tr>
