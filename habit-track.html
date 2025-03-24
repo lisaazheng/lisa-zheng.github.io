@@ -5,41 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habit Tracker</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid black; padding: 10px; text-align: center; }
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h2 { color: #333; }
+        table { 
+            width: 80%; 
+            margin: 20px auto; 
+            border-collapse: collapse; 
+            background: white; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 15px; 
+            text-align: center;
+            cursor: pointer;
+        }
+        th { background-color: #4CAF50; color: white; }
         .completed { background-color: lightgreen; }
+        .reset-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .reset-btn:hover { background: darkred; }
     </style>
 </head>
 <body>
-    <h2>Habit Tracker</h2>
+
+    <h2>Weekly Habit Tracker</h2>
+    
     <table id="habit-table">
         <tr>
             <th>Habit</th>
-            <th>Day 1</th>
-            <th>Day 2</th>
-            <th>Day 3</th>
-            <th>Day 4</th>
-            <th>Day 5</th>
-            <th>Day 6</th>
-            <th>Day 7</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
         </tr>
         <tr>
             <td>Exercise</td>
-            <td onclick="toggleCompletion(this)"></td>
-            <td onclick="toggleCompletion(this)"></td>
-            <td onclick="toggleCompletion(this)"></td>
-            <td onclick="toggleCompletion(this)"></td>
-            <td onclick="toggleCompletion(this)"></td>
-            <td onclick="toggleCompletion(this)"></td>
-            <td onclick="toggleCompletion(this)"></td>
+            <td onclick="toggleCompletion(this, 0, 1)"></td>
+            <td onclick="toggleCompletion(this, 0, 2)"></td>
+            <td onclick="toggleCompletion(this, 0, 3)"></td>
+            <td onclick="toggleCompletion(this, 0, 4)"></td>
+            <td onclick="toggleCompletion(this, 0, 5)"></td>
+            <td onclick="toggleCompletion(this, 0, 6)"></td>
+            <td onclick="toggleCompletion(this, 0, 7)"></td>
+        </tr>
+        <tr>
+            <td>Read</td>
+            <td onclick="toggleCompletion(this, 1, 1)"></td>
+            <td onclick="toggleCompletion(this, 1, 2)"></td>
+            <td onclick="toggleCompletion(this, 1, 3)"></td>
+            <td onclick="toggleCompletion(this, 1, 4)"></td>
+            <td onclick="toggleCompletion(this, 1, 5)"></td>
+            <td onclick="toggleCompletion(this, 1, 6)"></td>
+            <td onclick="toggleCompletion(this, 1, 7)"></td>
+        </tr>
+        <tr>
+            <td>Meditate</td>
+            <td onclick="toggleCompletion(this, 2, 1)"></td>
+            <td onclick="toggleCompletion(this, 2, 2)"></td>
+            <td onclick="toggleCompletion(this, 2, 3)"></td>
+            <td onclick="toggleCompletion(this, 2, 4)"></td>
+            <td onclick="toggleCompletion(this, 2, 5)"></td>
+            <td onclick="toggleCompletion(this, 2, 6)"></td>
+            <td onclick="toggleCompletion(this, 2, 7)"></td>
         </tr>
     </table>
 
+    <button class="reset-btn" onclick="resetTracker()">Reset Tracker</button>
+
     <script>
-        function toggleCompletion(cell) {
-            cell.classList.toggle('completed');
+        // Load habits from local storage
+        document.addEventListener("DOMContentLoaded", function() {
+            let savedData = JSON.parse(localStorage.getItem("habitTracker")) || {};
+            let table = document.getElementById("habit-table");
+
+            for (let i = 1; i < table.rows.length; i++) {
+                for (let j = 1; j < table.rows[i].cells.length; j++) {
+                    if (savedData[`${i}-${j}`]) {
+                        table.rows[i].cells[j].classList.add("completed");
+                    }
+                }
+            }
+        });
+
+        function toggleCompletion(cell, row, col) {
+            cell.classList.toggle("completed");
+
+            let savedData = JSON.parse(localStorage.getItem("habitTracker")) || {};
+            let key = `${row}-${col}`;
+
+            if (cell.classList.contains("completed")) {
+                savedData[key] = true;
+            } else {
+                delete savedData[key];
+            }
+
+            localStorage.setItem("habitTracker", JSON.stringify(savedData));
+        }
+
+        function resetTracker() {
+            localStorage.removeItem("habitTracker");
+            let cells = document.querySelectorAll("#habit-table td");
+            cells.forEach(cell => cell.classList.remove("completed"));
         }
     </script>
+
 </body>
 </html>
