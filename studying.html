@@ -1,115 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title> Studying </title>
-  
-</head>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-  body {background-color: #507559;
-        color: white;
-        font-family: "Gaegu", cursive;
-     }
-ol {
-    background: #91685e;
-    padding: 20px;
-    border-radius: 10px;
-}
-  
-  .accordion {
-            background-color: #eee;
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 18px;
-            transition: 0.4s;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studying</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* 🌿 Aesthetic Sage Green Theme */
+        body {
+            background-color: #f0f4f3;
+            color: #2f4f4f;
+            font-family: "Quicksand", sans-serif;
+            text-align: center;
+            padding: 20px;
         }
-        .active, .accordion:hover {
-            background-color: #ccc;
+        h1 {
+            font-family: "Gaegu", cursive;
+            font-size: 36px;
+            color: #3a5a40;
+        }
+        h2 {
+            font-size: 24px;
+            color: #588157;
+            margin-top: 30px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: #3a5a40;
+            display: block;
+            margin: 8px auto;
+            border-radius: 2px;
+        }
+        p {
+            max-width: 700px;
+            margin: 10px auto;
+            line-height: 1.6;
+        }
+        ol {
+            background: #b5c99a;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            max-width: 700px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        a {
+            color: #2f4f4f;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+        a:hover {
+            color: #344e41;
+            text-decoration: underline;
+        }
+        .accordion {
+            background-color: #3a5a40;
+            color: white;
+            cursor: pointer;
+            padding: 12px;
+            width: 90%;
+            border: none;
+            text-align: center;
+            font-size: 18px;
+            transition: 0.3s;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .accordion:hover {
+            background-color: #588157;
+            transform: scale(1.05);
         }
         .panel {
-            padding: 0 15px;
+            padding: 15px;
             display: none;
-            background-color: white;
-            overflow: hidden;
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin-top: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
-</style>
+        .study-image {
+            width: 100px;
+            height: auto;
+            margin-top: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .study-image:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+        .button-link {
+            display: inline-block;
+            background-color: #3a5a40;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background 0.3s ease-in-out;
+            margin-top: 15px;
+        }
+        .button-link:hover {
+            background-color: #588157;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
 <body>
-  <h1> Studying (˶˃ ᵕ ˂˶) </h1>  
-  <p> Since this website is mostly for me, I'll be attaching links to my own notes that will be private Google Docs. (I don't really expect anyone to stumble upon my website! 
-  I am taking 5 AP's in school this year, and self-studying for AP Computer Science A. I find that it is very finally for me to make these summary sheets in Google Docs deriving all that I need to know from school material, CollegeBoard Daily videos, online resources, and Princeton Reviews. </p>
-  <ol>
-    <li> AP Statistics (mostly done) </li>
-    <a href = "https://docs.google.com/document/d/1gfs9PpotrFX8YKnTwx3DAQtmDyv9kblXMPI7dExgyDo/edit?tab=t.0"> AP Statistics Summary Sheet </a>
-    <li> AP Environmental Science </li>
-    <a href = "    https://docs.google.com/document/d/1J7V2dAUcFpPsA_ETPhzrQBFMvEOk-oKo3-p5tGZgHJE/edit?tab=t.0"> AP Statistics Summary Sheet </a>
-    <li> AP Physics 2 </li>
-    <a href = "https://docs.google.com/document/d/1TMDEclt8lha6U-pquvgA8e24EnDVE230OVs85FqjDXA/edit?tab=t.0"> AP Physics 2 Summary Sheet </a>
-    <li> AP Language & Composition (done) </li>
-    <li> AP Spanish </li>
-    <li> AP CSA </li>
-    <a href = "https://docs.google.com/document/d/1pjHWqrhRmohDgx8XfjzZxsNMcQwKTxPYMN2Pj8GO8aU/edit?tab=t.0"> AP CSA Summary Sheet </a>
-  </ol>
 
-  <p> I am also studying for my driver's permit... ughhh. </p>
+    <h1>Studying (˶˃ ᵕ ˂˶)</h1>  
+    <p>Since this website is mostly for me, I'll be attaching links to my own notes that will be private Google Docs...</p>
 
-  <h2> Studying tools I recommend: ~
-˚　　　　✦　　　.　　. 　 ˚　.　　　　　 . ✦　　　 　˚　　　　 . ★⋆. ࿐࿔ 
-　　　.   　　˚　　 　　*　　 　　✦　　　.　　.　　　✦　˚ 　　　　 ˚　.˚　　　　✦　　　.　　. 　 ˚　.　　　　 　　 　　　　 ੈ✧̣̇˳·˖✶</h2>
-  <ol>
-    
-    <li> 
-      <a href = "https://track.toggl.com/timer"> Toggl Time tracker </a> You can enter what you are currently working on, such as "web dev" and it will track the time you spent on it. This makes me feel very rewarded at the end of the day or week as I see that I used my time efficiently. I also usually work for 1 hour on a specific task, take a 10-minute break, and choose what to work on next.
-    </li>
-    <li>
-      <a href = "https://flocus.com/"> Flocus.io </a> Very aesthetic pomodoro timer.
-    </li>
-    <li>
-      Goodnotes. If you have a stylus and an iPad/tablet, this is a great way to store your notes all in one place, so you don't have loose papers in your backpack. Getting Goodnotes Premium is worth it (it's a one-time payment of $30), as it allows you access to infinite notebooks!
-    </li>
-    <li>
-      Obsidian. A great way to take notes on your computer. It's very organized and easy to use.
-    </li>
-    <li>
-      Anki. A better flashcards app than Quizlet, because you can personalize how much repetition you need for a specific card.
-    </li>
-    <li> Spotify, of course! I can't work without music. It gets me going.
-    </li>
-  </ol>
+    <ol>
+        <li>AP Statistics (mostly done) → <a href="https://docs.google.com/document/d/1gfs9PpotrFX8YKnTwx3DAQtmDyv9kblXMPI7dExgyDo/edit">AP Statistics Summary Sheet</a></li>
+        <li>AP Environmental Science → <a href="https://docs.google.com/document/d/1J7V2dAUcFpPsA_ETPhzrQBFMvEOk-oKo3-p5tGZgHJE/edit">AP Environmental Science Summary Sheet</a></li>
+        <li>AP Physics 2 → <a href="https://docs.google.com/document/d/1TMDEclt8lha6U-pquvgA8e24EnDVE230OVs85FqjDXA/edit">AP Physics 2 Summary Sheet</a></li>
+        <li>AP Language & Composition (done)</li>
+        <li>AP Spanish</li>
+        <li>AP CSA → <a href="https://docs.google.com/document/d/1pjHWqrhRmohDgx8XfjzZxsNMcQwKTxPYMN2Pj8GO8aU/edit">AP CSA Summary Sheet</a></li>
+    </ol>
 
+    <h2>Studying Tools I Recommend</h2>
+    <ol>
+        <li><a href="https://track.toggl.com/timer">Toggl Time Tracker</a> - Great for tracking study time.</li>
+        <li><a href="https://flocus.com/">Flocus.io</a> - Aesthetic Pomodoro timer.</li>
+        <li>Goodnotes - Great for digital note-taking.</li>
+        <li>Obsidian - Best for structured note-taking.</li>
+        <li>Anki - Best for flashcards.</li>
+        <li>Spotify - Because study music is essential!</li>
+    </ol>
 
-  <h2>StudyTubers I used to watch (+ YouTube playlists)</h2>
-  <ol>
-    <li> Study Music playlist on <a href="https://www.youtube.com/playlist?list=PL4EMkGM8esHjvSxUluwYBfIFnYnqM09ym"> YouTube </a></li>
-    <li> <a href="https://www.youtube.com/@studyquill"> Studyquill </a></li>
-    <li> <a href="https://www.youtube.com/@StudyToSuccess/videos"> Study to Success </a></li>
-  </ol>
-  <div style="text-align: center;">
-  <a href="index.html">
-  <img src="Match2.png" alt="Matcha Glass" style="width: 100px; height: auto;">
-  </a>
-    
-  <a href="matcha.html">
-    CLICK HERE!
-  </a>
-  </div>
+    <h2>StudyTubers & Playlists</h2>
+    <ol>
+        <li><a href="https://www.youtube.com/playlist?list=PL4EMkGM8esHjvSxUluwYBfIFnYnqM09ym">Study Music Playlist</a></li>
+        <li><a href="https://www.youtube.com/@studyquill">Studyquill</a></li>
+        <li><a href="https://www.youtube.com/@StudyToSuccess/videos">Study to Success</a></li>
+    </ol>
 
-  <h2>Review of Productivity Apps (that I don't use)</h2>
-<button class="accordion">Click Me</button>
-<div class="panel">
-    <p>HELLO</p>
-</div>
-  
-  <script>
-    document.querySelector(".accordion").addEventListener("click", function() {
-        this.classList.toggle("active");
-        let panel = this.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-    });
-    
-</script>
+    <div>
+        <a href="index.html">
+            <img src="Match2.png" alt="Matcha Glass" class="study-image">
+        </a>
+        <br>
+        <a href="matcha.html" class="button-link">CLICK HERE!</a>
+    </div>
+
+    <h2>Review of Productivity Apps</h2>
+    <button class="accordion">Click Me</button>
+    <div class="panel">
+        <p>HELLO</p>
+    </div>
+
+    <script>
+        document.querySelector(".accordion").addEventListener("click", function() {
+            this.classList.toggle("active");
+            let panel = this.nextElementSibling;
+            panel.style.display = panel.style.display === "block" ? "none" : "block";
+        });
+    </script>
+
 </body>
 </html>
