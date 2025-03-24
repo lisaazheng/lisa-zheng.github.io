@@ -3,11 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lisa's Matcha Shop &#128515;</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Lisa's Matcha Shop 😊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* 🌿 Aesthetic Sage Green Theme */
+        body {
+            background-color: #f0f4f3;
+            color: #2f4f4f;
+            font-family: "Quicksand", sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3a5a40;
+            padding: 15px 0;
+        }
+        nav {
+            text-align: center;
+        }
+        .nav-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .nav-list li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .nav-list a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav-list a:hover {
+            color: #b5c99a;
+        }
+        h1 {
+            font-family: "Gaegu", cursive;
+            font-size: 36px;
+            color: #3a5a40;
+            margin-top: 30px;
+        }
+        p {
+            max-width: 600px;
+            margin: 15px auto;
+            line-height: 1.6;
+        }
+        ol {
+            background: #b5c99a;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        a {
+            color: #2f4f4f;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+        a:hover {
+            color: #344e41;
+            text-decoration: underline;
+        }
+        .spotify-player {
+            margin-top: 15px;
+            border-radius: 12px;
+        }
+        .matcha-image {
+            width: 100px;
+            height: auto;
+            margin-top: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .matcha-image:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <nav>
             <ul class="nav-list">
@@ -31,15 +114,18 @@
         <ol>
             <li>Red Bull (sadly)</li>
             <li>Singing (albeit off-key) to music</li>
-            <a href = "https://open.spotify.com/user/adz7bes5oe1w4hslhsql5elu6?si=f097a98ae9ea4242"> My Spotify!</a>
-            <iframe src="<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3rq6CQM7q1nDf97axF4qSx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <a href="https://open.spotify.com/user/adz7bes5oe1w4hslhsql5elu6?si=f097a98ae9ea4242">My Spotify!</a>
+            
+            <iframe class="spotify-player" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3rq6CQM7q1nDf97axF4qSx?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
             <li>Matcha</li>
             <li>Having free time to read</li>
         </ol>
+
         <a href="math.html">
-        <img src="matcha1.png" alt="Matcha Glass" style="width: 100px; height: auto;">
+            <img src="matcha1.png" alt="Matcha Glass" class="matcha-image">
         </a>
     </section>
+
 </body>
 </html>
